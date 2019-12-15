@@ -1,0 +1,35 @@
+.advantages {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	margin-top: 40px;
+	&__icon {
+		display: inline-block;
+		vertical-align: middle;
+		&--delivery-truck {
+			.sprite(@delivery-truck);
+		}
+		&--customer-support {
+			.sprite(@customer-support);
+		}
+		&--diploma {
+			.sprite(@diploma);
+		}
+		&--giftbox {
+			.sprite(@giftbox);
+		}
+		&--shuffle {
+			.sprite(@shuffle);
+		}
+	}
+	&__text {
+		display: inline-block;
+		max-width: 105px;
+		font-size: 12px;
+		font-weight: 500;
+		vertical-align: middle;
+		span {
+			display: block;
+		}
+	}
+}

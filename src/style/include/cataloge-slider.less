@@ -1,0 +1,54 @@
+.cataloge-slider {
+	display: none;
+	padding: 20px 0;
+	width: 100%;
+	max-width: 715px;
+	margin: 0 auto;
+	&__item {
+		box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.2);
+		text-align: center;
+		border-bottom-right-radius: 4px;
+		border-bottom-left-radius: 4px;
+	}
+	&__link {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		height: 110px;
+		width: 100%;
+	}		
+	&__icon {
+		display: inline-block;
+		&--roller-skate {
+			.sprite(@roller-skate-m)
+		}
+		&--surface1 {
+			.sprite(@surface1-m)
+		}
+		&--helmet {
+			.sprite(@helmet-m)
+		}
+		&--backpack {
+			.sprite(@backpack-m)
+		}
+		&--road-sign {
+			.sprite(@road-sign-m)
+		}
+		&--roller-skate1 {
+			.sprite(@roller-skate-1-m)
+		}
+	}
+	&__text {
+		display: block;
+		font-size: 10px;
+		margin-top: 10px;
+	}
+	.slick-list {
+		padding: 0 2px;
+	}
+	.slick-slide {
+		width: 110px;
+		margin: 5px;
+	}
+}

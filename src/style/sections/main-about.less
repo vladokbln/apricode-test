@@ -1,0 +1,36 @@
+.main-about {
+	position: relative;
+	color: #5C6875;
+	&__title {
+		font-size: 25px;
+		color: #5C6875;
+		margin-bottom: 25px;
+	}
+	&__btn {
+		font-size: 11px;
+		color: #9FA8B2;
+		text-align: center;
+		width: 65px;
+		position: absolute;
+		top: 0;
+		right: 0;
+	}
+	&__btn-icon {
+		display: block;
+		margin: 0 auto 5px;
+		.sprite(@plus);
+		.height-auto & {
+			.sprite(@minus);
+		}
+	}
+	&__text {
+		line-height: 25px;
+		height: 80px;
+		overflow: hidden;
+		padding-right: 130px;
+		transition: 0.3s;
+		.height-auto & {
+			height: 100%;
+		}
+	}
+}
