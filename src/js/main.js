@@ -9,7 +9,6 @@ $(function() {
 		appendDots: '.main-slider__dots',
 		customPaging : function(slider, i) {
 			return '<a class="main-slider__dot"></a>';
-			
 		},
 		autoplay: true,
 	});
@@ -17,80 +16,64 @@ $(function() {
 		infinite: false,
 		slidesToShow: 8,
 		slidesToScroll: 1,
-		// variableWidth: true,
 		prevArrow: '.brands-slider__nav-prev',
 		nextArrow: '.brands-slider__nav-next'
 	});
 
-	var GoodsSlider = function () {
 
-		$('.goods__top-js').each(function(ind) {
-			$(this).slick({
-				slidesToShow: 1,
-				slidesToScroll: 1,
-				infinite: false,
-				dots: true,
-				arrows: false,
-				swipe: false,
-				appendDots: $(this).parents('.goods__top').find('.goods__colors'),
-				customPaging: function(slider, i) {
-					var color = $('.goods__img').eq(i).data('color');
-					
-					return '<a href="javascript:void(0);" class="goods__colors-item" style="background-color:'+ color +'"></a>'
-				}
-			});	
-		});
-	}
-	GoodsSlider();
-	var sliderGoodsList;
-	function sliderGoods() {
-		sliderGoodsList = $(".main-goods__list").slick({
-			infinite: false,
-			dots: false,
-			arrows: false,
-			slidesToShow: 5,
-			slidesToScroll: 1,
-			autoplay: true,
-			responsive: [
-				{
-					breakpoint: 1500,
-					settings: {
-						slidesToShow: 5,
-						slidesToScroll: 1,
-					}
-				},
-				{
-					breakpoint: 1300,
-					settings: {
-						slidesToShow: 4,
-						slidesToScroll: 1,
-					}
-				},
-				{
-					breakpoint: 1024,
-					settings: {
-						slidesToShow: 3,
-						slidesToScroll: 1,
-					}
-				},
-				{
-					breakpoint: 800,
-					settings: {
-						slidesToShow: 2,
-						slidesToScroll: 1,
-					}
-				},
-				{
-					breakpoint: 600,
-					settings: {
-						slidesToShow: 1,
-						slidesToScroll: 1,
-					}
-				}
-			]
-		});
-	} 
-	sliderGoods()
+	// var sliderGoodsList;
+	// function sliderGoods() {
+	// 	sliderGoodsList = $(".main-goods__list").slick({
+	// 		infinite: false,
+	// 		dots: false,
+	// 		arrows: false,
+	// 		slidesToShow: 5,
+	// 		slidesToScroll: 1,
+	// 		autoplay: true,
+	// 		responsive: [
+	// 			{
+	// 				breakpoint: 1500,
+	// 				settings: {
+	// 					slidesToShow: 5,
+	// 					slidesToScroll: 1,
+	// 				}
+	// 			},
+	// 			{
+	// 				breakpoint: 1300,
+	// 				settings: {
+	// 					slidesToShow: 4,
+	// 					slidesToScroll: 1,
+	// 				}
+	// 			},
+	// 			{
+	// 				breakpoint: 1050,
+	// 				settings: {
+	// 					slidesToShow: 3,
+	// 					slidesToScroll: 1,
+	// 				}
+	// 			},
+	// 			{
+	// 				breakpoint: 800,
+	// 				settings: {
+	// 					slidesToShow: 2,
+	// 					slidesToScroll: 1,
+	// 				}
+	// 			},
+	// 			{
+	// 				breakpoint: 600,
+	// 				settings: {
+	// 					slidesToShow: 1,
+	// 					slidesToScroll: 1,
+	// 				}
+	// 			}
+	// 		]
+	// 	});
+	// } 
+	// sliderGoods();
+	$('.goods__colors-item').click(function(){
+		$(this).closest('.goods__colors').find('.goods__colors-item').removeClass('active')
+		$(this).addClass('active');
+	});
 	$( window ).resize(function() {
 		sliderGoodsList.slick('reinit');
 	});

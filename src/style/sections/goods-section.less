@@ -22,12 +22,10 @@
 		padding: 30px 13px 20px;
 		border-right: 1px solid #E5E5E5;
 		position: relative;
-	}
-	.slick-track {
-		margin-right: -1px;
-	}
-	.slick-list {
-		margin-right: 3px;
+		width: 20%;
+		&:last-child {
+			border: none;
+		}
 	}
 }
 .goods {
@@ -37,7 +35,7 @@
 	&__img {
 		padding: 23px;
 		width: 100%;
-
+		display: block;
 		text-align: center;
 		img {
 			max-width: 230px;
@@ -47,12 +45,30 @@
 	&__colors {
 		position: absolute;
 		right: 0;
-		bottom: 0;
+		bottom: 30px;
 		&-item {
-			display: inline-block;
+			display: block;
 			width: 14px;
 			height: 14px;
-
+			margin-top: 5px;
+			cursor: pointer;
+			transition: border-radius 0.1s;
+			&.active {
+				border-radius: 50%;
+				border: 1px solid #FED112;
+			}
+			&--black {
+				background-color: #000;
+			}
+			&--orange {
+				background-color: #FED112;
+			}
+			&--red {
+				background-color: #FE5212;
+			}
+			&--blue {
+				background-color: #12CDFE;
+			}
 		}
 		.slick-active .goods__colors-item {
 			border-radius: 50px;
