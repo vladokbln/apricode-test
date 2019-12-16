@@ -169,9 +169,21 @@
 		border-radius: 5px;
 		border-bottom-right-radius: 0;
 		line-height: 30px;
+
 		&:hover {
+			&:after {
+				content: '';
+				position: absolute;
+				top: 100%;
+				left: 0;
+				width: 100%;
+				padding-bottom: 40px;
+				z-index: 3;
+	
+			}
 			.goods__payments-info {
-				display: block;
+				visibility: visible;
+				opacity: 1;
 			}
 		}
 	}
@@ -190,7 +202,8 @@
 	}
 	&__payments-info {
 		position: absolute;
-		display: none;
+		visibility: hidden;
+		opacity: 0;
 		width: 260px;
 		top: 40px;
 		left: 0;
@@ -201,6 +214,7 @@
 		line-height: 18px;
 		z-index: 100;
 		border-top: none;
+		transition: 0.3s;
 		&:before  {
 			content: '';
 			position: absolute;
@@ -209,8 +223,8 @@
 			top: -7px;
 			width: 20px; 
 			height: 20px;
-			z-index: -1; /* Прячем за основным блоком */
-			transform: rotate(45deg); /* Поворачиваем на 45º */
+			z-index: -1; 
+			transform: rotate(45deg); 
 			-webkit-transform: rotate(45deg);
 			border-radius: 2px;
 		}
